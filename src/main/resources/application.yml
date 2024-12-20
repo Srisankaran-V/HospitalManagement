@@ -6,7 +6,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -15,5 +15,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 jwt:
   secret:
-    key: b2e7c6e1f29f13e0d8a6b5c3e07a8b9c6a3f9c8b27f93eac5641d3c72a9a6b0c
+    key: df2b322003129d773a1b78ece37fe86b41c3c0517c770879891f40a13a05ce7bc361520419500ec6f0854e24084d26385357246cfb41aa153b74cc197bee704778f7d870a6f5ae226a9deaf539db0daea59e09fb4a6a93969e53ffd4fdf1b23ef7696203a49fb1c272aeea90d1bd2ca4f4ba8b26e4d4891d5390ddee36e84debbf0a5b87d48735b7ba550a568b6bef77d0c6550d9cdae7bf1572a59a427c07af176f18c3b3ea58890295103b8630240e50599eec6044c567e7194c7992302fff1cb918897e41b76d634996b8ef7ddfa88dc9a60572227014310c4157d7629fde1a08233125f03c5961a6bf70cb44ac75f482d88e3441213683097a2905bd546b
+  expiration:
+    time: 86400000
 

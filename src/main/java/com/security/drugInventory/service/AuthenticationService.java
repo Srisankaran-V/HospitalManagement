@@ -1,9 +1,12 @@
-package com.security.drugInventory.auth;
+package com.security.drugInventory.service;
 
+import com.security.drugInventory.auth.AuthenticationRequest;
+import com.security.drugInventory.auth.AuthenticationResponse;
+import com.security.drugInventory.auth.RegisterRequest;
 import com.security.drugInventory.config.JWTService;
 import com.security.drugInventory.user.Role;
 import com.security.drugInventory.user.User;
-import com.security.drugInventory.user.UserRepository;
+import com.security.drugInventory.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

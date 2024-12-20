@@ -30,9 +30,10 @@ public class SecurityConfiguration implements WebMvcConfigurer{
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/v1/auth/**").permitAll()
-                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/api/v1/doctor/**").hasRole("DOCTOR")
-                        .requestMatchers("/api/v1/user/**").hasRole("USER")
+                        .requestMatchers("/api/v1/users/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/v1/users/doctor/**").hasRole("DOCTOR")
+                        .requestMatchers("/api/v1/patient/**").authenticated()
+                        .requestMatchers("/api/v1/drugs/user/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
@@ -46,7 +47,7 @@ public class SecurityConfiguration implements WebMvcConfigurer{
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000") // React app URL
+                .allowedOrigins("http://localhost:5173") // React app URL
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*");
     }

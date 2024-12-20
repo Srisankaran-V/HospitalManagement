@@ -1,6 +1,6 @@
 package com.security.drugInventory.config;
 
-import com.security.drugInventory.user.UserRepository;
+import com.security.drugInventory.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

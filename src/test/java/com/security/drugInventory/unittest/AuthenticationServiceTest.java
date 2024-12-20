@@ -3,12 +3,12 @@ package com.security.drugInventory.unittest;
 
 import com.security.drugInventory.auth.AuthenticationRequest;
 import com.security.drugInventory.auth.AuthenticationResponse;
-import com.security.drugInventory.auth.AuthenticationService;
+import com.security.drugInventory.service.AuthenticationService;
 import com.security.drugInventory.auth.RegisterRequest;
 import com.security.drugInventory.config.JWTService;
 import com.security.drugInventory.user.Role;
 import com.security.drugInventory.user.User;
-import com.security.drugInventory.user.UserRepository;
+import com.security.drugInventory.repositories.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,7 +17,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;

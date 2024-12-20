@@ -17,11 +17,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_user")
+@Table(name = "user_table")
 public class User implements UserDetails {
-//    @Id
-//    @GeneratedValue
-//    private String id;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Use appropriate strategy if UUID
     private Long id;

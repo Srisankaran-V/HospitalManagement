@@ -1,5 +1,9 @@
-package com.security.drugInventory.auth;
+package com.security.drugInventory.controller;
 
+import com.security.drugInventory.auth.AuthenticationRequest;
+import com.security.drugInventory.auth.AuthenticationResponse;
+import com.security.drugInventory.auth.RegisterRequest;
+import com.security.drugInventory.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,0 +1,13 @@
+package com.security.drugInventory.repositories;
+
+import com.security.drugInventory.user.Role;
+import com.security.drugInventory.user.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+@Repository
+public interface UserRepository extends JpaRepository<User, Integer> {
+    Optional<User> findByEmail(String email);
+    Optional<User> findUserByRole(Role role);
+}

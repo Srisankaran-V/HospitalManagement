@@ -1,9 +1,7 @@
 package com.security.drugInventory.auth;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 
 @Data
 @Builder
@@ -12,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class AuthenticationRequest {
     private String email;
     private String password;
+
 }
