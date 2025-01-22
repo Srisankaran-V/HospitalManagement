@@ -5,7 +5,9 @@ package com.security.drugInventory.service;
 
 import com.security.drugInventory.repositories.PatientRepository;
 import com.security.drugInventory.user.Patient;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +15,10 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+
 public class PatientService {
+
+    @Autowired
     private final PatientRepository patientRepository;
 
     public List<Patient> getAllPatients() {

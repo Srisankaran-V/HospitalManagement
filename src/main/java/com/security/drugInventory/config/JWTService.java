@@ -25,8 +25,13 @@ public class JWTService {
 
     @Value("${jwt.secret.key}")
     private String secretKey;
+
+    @Value("${jwt.expiration.time}")
+    private long tokenExpiration;
     // Extract email (username) from JWT token
     public String extractEmail(String token) {
+        System.out.println("extracting email from claims ");
+
         return extractClaim(token, Claims::getSubject);
     }
 
@@ -46,13 +51,18 @@ public class JWTService {
                     .getBody();
         } catch (Exception e) {
             // Handle exceptions, e.g., logging or rethrowing as runtime exception
-            throw new RuntimeException("Invalid JWT token", e);
+            throw new RuntimeException("Invalid JWT token JWT Service 1", e);
         }
     }
 
+
+
+
     // Generate JWT token for UserDetails
     public String generateToken(UserDetails userDetails) {
-        return generateToken(new HashMap<>(), userDetails);
+        String token = generateToken(new HashMap<>(), userDetails);
+        System.out.println(" JWT Service Generated Token: " + token); // Debug log
+        return token;
     }
 
     // Generate JWT token with extra claims
@@ -65,7 +75,7 @@ public class JWTService {
                 .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24)) // 24 hours
+                .setExpiration(new Date(System.currentTimeMillis() + tokenExpiration)) // 24 hours
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
