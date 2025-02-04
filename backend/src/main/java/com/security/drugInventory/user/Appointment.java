@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -19,10 +20,10 @@ public class Appointment {
 
     @ManyToOne
     @JoinColumn(name = "patient_id", nullable = false)
-    private Patient patient;
+    private Long patientId;
 
-    private String doctor;
-    private LocalDate date;
-    private LocalTime time;
-    private String reason;
+    private Long doctorId;
+    private LocalDateTime timestamp;
+//    private LocalTime time;
+    private String status;
 }

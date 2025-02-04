@@ -4,6 +4,11 @@ spring:
     username: postgres
     password: admin
     driver-class-name: org.postgresql.Driver
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: appointment-group
+      auto-offset-reset: earliest
   jpa:
     hibernate:
       ddl-auto: update
